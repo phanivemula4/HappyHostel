@@ -1,0 +1,21 @@
+form{
+    background-color: #ff7979;
+padding: 20px;
+border-radius: 6px;
+width: 400px
+
+}
+button {
+    padding: 8px 18px;
+    font-size: 16px;
+    border: 1px solid #ff8e8e;
+    background-color: #f44242;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff5e5e;
+}

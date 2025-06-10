@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            max-width: 1300px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        nav {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .logout {
+            color: red;
+        }
+
+        .user-list {
+            margin-top: 2rem;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            font-weight: 400;
+            border: none;
+            font-size: larger;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function showUsers() {
+            const userList = document.getElementById('user-list');
+            userList.style.display = userList.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <main>
+        <h2>Welcome, Admin</h2>
+        <p>Here you can manage the application data and perform administrative tasks.</p>
+
+        <nav>
+            <a style="cursor: pointer;" onclick="showUsers();">View Users</a>
+            <a href="/adminlogout" class="logout">Logout</a>
+        </nav>
+
+        <!-- Users List -->
+        <div id="user-list" class="user-list" style="display: none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Mobile No</th>
+                        <th>Address</th>
+                        <th>College Name</th>
+                        <th>Jan</th>
+                        <th>Feb</th>
+                        <th>Mar</th>
+                        <th>Apr</th>
+                        <th>May</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Aug</th>
+                        <th>Sep</th>
+                        <th>Oct</th>
+                        <th>Nov</th>
+                        <th>Dec</th>
+                        <th>Option</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data && data.length > 0) { %>
+                        <% data.forEach(user => { %>
+                            <tr>
+                                <td><%= user.username %></td>
+                                <td><%= user.email %></td>
+                                <td><%= user.mobileno %></td>
+                                <td><%= user.address %></td>
+                                <td><%= user.collegename %></td>
+                                <td><%= user.jan %></td>
+                                <td><%= user.feb %></td>
+                                <td><%= user.mar %></td>
+                                <td><%= user.apr%></td>
+                                <td><%= user.may %></td>
+                                <td><%= user.jun %></td>
+                                <td><%= user.jul %></td>
+                                <td><%= user.aug %></td>
+                                <td><%= user.sep %></td>
+                                <td><%= user.oct %></td>
+                                <td><%= user.nov %></td>
+                                <td><%= user.dec %></td>
+                                <td>
+                                    <button onclick="deleteUserItem('<%= user._id %>')">Delete</button>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="7">No users available to display.</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script>
+        async function deleteUserItem(itemId) {
+            try {
+                const response = await fetch(`/userDelete/${itemId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                alert("User Deleted Successfully!!");
+                window.location.reload();
+            } catch (error) {
+                console.error('Error deleting user:', error);
+                alert('An error occurred while deleting the user.');
+            }
+        }
+    </script>
+</body>
+
+</html>

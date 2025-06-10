@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Home Hostel Bhimavaram</title>
+    <link rel="stylesheet" href="/css/home.css">
+    
+</head>
+
+<body>
+    <div class="box">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <img src="/images/logo.png" alt="Hostel Logo" class="pen">
+            </div>
+            <h1>HAPPY HOME HOSTEL BHIMAVARAM</h1>
+            <div><br>
+                <img src="Images/owner.jpg" style="height: 60px;
+        width: 60px;border-radius: 50%;padding: 0px;"><br>
+        <button onclick="window.location.href='/logout'">Logout</button>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <button onclick="window.location.href='/account'">Account</a>&nbsp&nbsp
+            <button onclick="window.location.href='/payment'">Fee Payment</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <img src="Images/hostel1.jpg" alt="Hostel Image">
+            <p><p>Welcome, <%= username %>!</p>
+            <h2>General Rules</h2>
+            
+            <p>1. Check-in and Check-out: Check-in time is usually 3 pm, and check-out time is 11 am or 12 pm. Please adhere to these times.<br>
+            2. Registration: All guests must register at the front desk upon arrival.<br>
+            3. Room Key: Room keys are issued to registered guests only. Please return your key to the front desk when checking out.</p><br>
+            
+            <h2>Room Rules</h2>
+            
+            <p>1. Occupancy: The maximum number of guests allowed in a room is specified at check-in.<br>
+            2. Smoking: Smoking is prohibited in all rooms and public areas.<br>
+            3. Pets: Pets are not allowed in hotel rooms, unless specifically permitted by hotel management.<br>
+            4. Noise: Excessive noise is not allowed, especially after 10 pm.<br>
+            5. Damage: Guests are responsible for any damage caused to hotel property.</p><br>
+            
+            <h2>Safety and Security</h2>
+            
+            <p>1. Emergency Procedures: Familiarize yourself with emergency procedures, such as evacuation routes and fire extinguisher locations.<br>
+            2. Valuables: Keep valuables secure, and use the hotel safe or lockbox if available.<br>
+            3. Room Locks: Always lock your room door when leaving or sleeping.</p><br>
+            
+            <h2> and Services></h2>
+            
+            <p>1. Wi-Fi: Wi-Fi is available in designated areas. Please ask for the password at the front desk.<br>
+            2. Pool and Gym: Pool and gym hours are specified. Please follow rules and regulations.<br>
+            3. Room Service: Room service is available during specified hours. Please check with the front desk for details.</p><br>
+            
+           <h2>Payment and Cancellation</h2>
+            
+            <p>1. Payment: Payment is due upon check-in. Please settle your bill before checking out.<br>
+            2. Cancellation: Cancellation policies vary. Please check with the hotel for specific policies.</p><br>
+            
+           <h2>Other Rules</h2>
+            
+            <p>1. Food and Drink: No outside food and drink are allowed in hotel rooms or public areas.<br>
+            2. Parties: No parties or gatherings are allowed in hotel rooms or public areas.<br>
+            3. Respect for Others: Please respect other guests and hotel staff.<br></p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <marquee>Facebook: @happyhostel | YouTube: @happyhostel | Instagram: @happyhostel</marquee>
+        </div>
+    </div>
+</body>
+
+</html>
